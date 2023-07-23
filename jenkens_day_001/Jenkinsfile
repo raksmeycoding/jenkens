@@ -5,8 +5,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Checkout the source code from your repository
-                git 'https://github.com/raksmeycoding/jenkens.git'
-                sh 'cd jenkens_day_001'
+                git branch: 'master', url: 'https://github.com/raksmeycoding/jenkens.git', path: 'jenkens_day_001'
             }
         }
 
