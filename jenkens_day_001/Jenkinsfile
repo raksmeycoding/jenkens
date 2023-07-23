@@ -6,7 +6,6 @@ pipeline {
             steps {
                 // Checkout the source code from your repository
                 git 'https://github.com/raksmeycoding/jenkens.git'
-                sh 'cd jenkens_day_001'
             }
         }
 
@@ -22,12 +21,12 @@ pipeline {
                 sh 'docker rm -f node-api-container || true'
 
                 sh 'docker rmi -f node-api:v1 || true'
-                //  dir('jenkens_day_001') {
-                //     sh 'pwd && ls -l'
-                //     sh 'echo "check directories existing && " && ls -l'
-                //     sh 'docker build . -t node-api:v1'
-                // }
-                sh 'docker build . -t node-api:v1'
+                 dir('jenkens_day_001') {
+                    sh 'pwd && ls -l'
+                    sh 'echo "check directories existing && " && ls -l'
+                    sh 'docker build . -t node-api:v1'
+                }
+                // sh 'docker build . -t node-api:v1'
              }
         }
 
