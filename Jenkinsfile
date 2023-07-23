@@ -19,7 +19,6 @@ pipeline {
                 // Stop and remove the existing container
                 sh 'docker stop node-api-container || true'
                 sh 'docker rm -f node-api-container || true'
-
                 sh 'docker rmi -f node-api:v1 || true'
                  dir('jenkens_day_001') {
                     sh 'pwd && ls -l'
